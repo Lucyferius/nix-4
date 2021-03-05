@@ -1,0 +1,2 @@
+Main-Class: Main
+Class-Path: libs/commons-lang3-3.11.jar libs/commons-math3-3.6.1.jar
