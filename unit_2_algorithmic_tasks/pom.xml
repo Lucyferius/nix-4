@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>lusyferius.pr</groupId>
-    <artifactId>MavenPractice</artifactId>
+    <artifactId>unit-2-tasks</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -21,21 +21,7 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-math3</artifactId>
-            <version>3.6.1</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.1.1</version>
-        </dependency>
+
     </dependencies>
 
 
@@ -111,7 +97,7 @@
                             <classpathPrefix>lib/</classpathPrefix>
                             <classpathLayoutType>simple</classpathLayoutType>
 
-                            <mainClass>Main</mainClass>
+                            <mainClass>Test</mainClass>
                         </manifest>
                         <!--<manifestEntries>-->
                         <!--<Rsrc-Class-Path>${}</Rsrc-Class-Path>-->

@@ -5,51 +5,40 @@ call "%~dp0bin\compile_from_terminal.bat"
 echo.
 echo. 
 
+cd
 
+cd ..
+cd
+cd .\resources
 
-
-
-echo Ant Jar
-echo. 
+cd
+call config_ant.bat
 cd..
-set ANT_OPTS=-Xmx2G -Dfile.encoding=UTF-8
-
-set ANT_HOME=%~dp0resources\apache_ant
-set PATH=%ANT_HOME%\bin;%PATH%
-set CLASSPATH=
-
-echo Setting ant home to: %ANT_HOME%
-echo ANT_HOME = %ANT_HOME%
-
-cd ant_with_libs
-
-call ant clean
-call ant compile
-call ant jar
-call ant run
+cd .\ant_with_libs
+call ant.bat
 
 
+rem echo Ant Jar
+rem echo. 
+rem cd..
+rem et ANT_OPTS=-Xmx2G -Dfile.encoding=UTF-8
 
+rem set ANT_HOME=%~dp0resources\apache_ant
+rem set PATH=%ANT_HOME%\bin;%PATH%
+rem set CLASSPATH=
 
+rem echo Setting ant home to: %ANT_HOME%
+rem echo ANT_HOME = %ANT_HOME%
 
-echo Maven Jar
-cd..
-set MAVEN_OPT=-Xmx2G -Dfile.encoding=UTF-8
+rem cd ant_with_libs
 
-set MAVEN=%~dp0resources\apache-maven
-set PATH=%MAVEN%\bin;%PATH%
-set CLASSPATH=
+rem call ant clean
+rem call ant compile
+rem call ant jar
+rem call ant run
 
-echo Setting ant home to: %MAVEN%
-echo MAVEN = %MAVEN%
-
-cd maven_with_libs
-
-call mvn archetype:generate -Dfilter=org.example.group:example-artifact
-activeMode=false
-
-call mvn clean install
-
-java -jar target/MavenPractice-1.0-SNAPSHOT.jar
 pause
+
+
+
 

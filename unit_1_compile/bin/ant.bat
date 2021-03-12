@@ -1,9 +1,8 @@
 @echo off
-call %~dp0bin\config_ant.bat
+rem call %~dp0bin\config_ant.bat
 
-cd ant_with_libs
-call ant clean
-call ant compile
-call ant jar
-call ant run
+call ant clean compile jar run 
+rem call ant compile
+rem call ant jar
+rem call ant run
 pause
