@@ -1,0 +1,33 @@
+2021-04-04 17:23:03 [INFO ] AuthorDAOImpl:17 - Check is author exist by name
+2021-04-04 17:23:03 [INFO ] AuthorDAOImpl:22 - Start author creating
+2021-04-04 17:23:03 [INFO ] AuthorDAOImpl:24 - Author created
+2021-04-04 17:23:15 [INFO ] AuthorDAOImpl:17 - Check is book exist by name
+2021-04-04 17:23:15 [INFO ] AuthorDAOImpl:22 - Start book creating
+2021-04-04 17:23:15 [INFO ] AuthorDAOImpl:24 - Book created
+2021-04-04 17:23:20 [INFO ] AuthorDAOImpl:59 - Start searching author by name
+2021-04-04 17:23:20 [INFO ] AuthorDAOImpl:61 - Searching by name = a a is done
+2021-04-04 17:23:23 [INFO ] AuthorDAOImpl:60 - Start searching book by name
+2021-04-04 17:23:23 [INFO ] AuthorDAOImpl:65 - Searching by name = book is done
+2021-04-04 17:23:23 [INFO ] AuthorDAOImpl:82 - Start of adding book to author
+2021-04-04 17:23:23 [INFO ] AuthorDAOImpl:85 - Adding book is completed
+2021-04-04 17:23:23 [INFO ] AuthorDAOImpl:60 - Start searching book by name
+2021-04-04 17:23:23 [INFO ] AuthorDAOImpl:65 - Searching by name = book is done
+2021-04-04 17:23:23 [INFO ] AuthorDAOImpl:83 - Start of adding author
+2021-04-04 17:23:23 [INFO ] AuthorDAOImpl:86 - Adding author is completed
+2021-04-04 17:23:28 [INFO ] AuthorDAOImpl:40 - Start of updating author
+2021-04-04 17:23:28 [INFO ] AuthorDAOImpl:42 - Author is updated
+2021-04-04 17:23:32 [INFO ] AuthorDAOImpl:30 - Start reading all
+2021-04-04 17:23:32 [INFO ] AuthorDAOImpl:34 - Returning all authors
+2021-04-04 17:23:35 [INFO ] AuthorDAOImpl:30 - Start reading all
+2021-04-04 17:23:35 [INFO ] AuthorDAOImpl:34 - Returning all books
+2021-04-04 17:23:52 [INFO ] AuthorDAOImpl:59 - Start searching author by name
+2021-04-04 17:23:52 [INFO ] AuthorDAOImpl:61 - Searching by name = aaaaaaaa a is done
+2021-04-04 17:23:52 [INFO ] AuthorDAOImpl:92 - Start author deleting in book
+2021-04-04 17:23:52 [INFO ] AuthorDAOImpl:97 - Author is deleted in book
+2021-04-04 17:23:52 [INFO ] AuthorDAOImpl:47 - Start of deleting author
+2021-04-04 17:23:52 [INFO ] AuthorDAOImpl:49 - Deleting is done
+2021-04-04 17:23:56 [INFO ] AuthorDAOImpl:30 - Start reading all
+2021-04-04 17:23:56 [INFO ] AuthorDAOImpl:33 - List is empty
+2021-04-04 17:23:56 [INFO ] AuthorDAOImpl:34 - Returning all authors
+2021-04-04 17:23:57 [INFO ] AuthorDAOImpl:30 - Start reading all
+2021-04-04 17:23:57 [INFO ] AuthorDAOImpl:34 - Returning all books
