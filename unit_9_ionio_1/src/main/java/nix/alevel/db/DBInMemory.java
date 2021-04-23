@@ -81,6 +81,22 @@ public class DBInMemory {
         }
         recreateAuthors(authorsCSV);
     }
+    public void recreateAuthors(List<Author> authorsCSV){
+        initHeader(headerAuthor, authorFile);
+        for (Author author : authorsCSV) {
+            String[] fields = parseAuthorToArray(author);
+            for (String s : author.getBookList())
+                if (fields[4].equals(" ")) {
+                    fields[4] = fields[3].trim();
+                    fields[4] = s + " ";
+                } else fields[4] = fields[4] +  s + " ";
+            try (CSVWriter writer = new CSVWriter(new FileWriter(authorFile, true))) {
+                writer.writeNext(fields);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public void updateBook(Book book){
         List<Book> bookCSV = findAllBooks();
@@ -103,120 +119,67 @@ public class DBInMemory {
         return books.stream().filter(BaseEntity::getIsExist).collect(Collectors.toList());
     }
     private List<Author> findAllAuthors() {
-        List<String[]> csvData;
-        Author author;
         List<Author> res = new ArrayList<>();
         try (CSVReader reader = new CSVReader(new FileReader(authorFile))) {
-            csvData = reader.readAll();
+            List<String[]> csvData = reader.readAll();
             for (int i = 1; i < csvData.size(); i++) {
-                String[] fields = csvData.get(i);
-                author = new Author();
-                author.setId(fields[0]);
+                Author author = new Author();
+                author.setId(csvData.get(i)[0]);
                 Date date = null;
-                try {
-                    date = dateFormat.parse(fields[1]);
+                try { date = dateFormat.parse(csvData.get(i)[1]);
                 } catch (ParseException e) {
                     System.out.println("Unsupported format");
                 }
                 author.setCreated(date);
-                author.setFirstName(fields[2]);
-                author.setLastName(fields[3]);
-                List<String> books = new ArrayList<>(Arrays.asList(fields[4].split("[ ]")));
-                author.setBookList(books);
-                author.setIsExist(Boolean.parseBoolean(fields[5]));
+                author.setFirstName(csvData.get(i)[2]);
+                author.setLastName(csvData.get(i)[3]);
+                author.setBookList(new ArrayList<>(Arrays.asList(csvData.get(i)[4].split("[ ]"))));
+                author.setIsExist(Boolean.parseBoolean(csvData.get(i)[5]));
                 res.add(author);
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
         return res;
     }
     private List<Book> findAllBooks() {
-        List<String[]> csvData;
-        Book book;
         List<Book> res = new ArrayList<>();
         try (CSVReader reader = new CSVReader(new FileReader(bookFile))) {
-            csvData = reader.readAll();
+            List<String[]> csvData = reader.readAll();
             for (int i = 1; i < csvData.size(); i++) {
-                String[] fields = csvData.get(i);
-                book = new Book();
-                book.setId(fields[0]);
-                book.setName(fields[2]);
+                Book book = new Book();
+                book.setId(csvData.get(i)[0]);
+                book.setName(csvData.get(i)[2]);
                 Date date = null;
-                try {
-                    date = dateFormat.parse(fields[1]);
+                try { date = dateFormat.parse(csvData.get(i)[1]);
                 } catch (ParseException e) {
                     System.out.println("Unsupported format");
                 }
                 book.setCreated(date);
-
-                List<String> authors = new ArrayList<>(Arrays.asList(fields[3].split("[ ]")));
-                book.setAuthors(authors);
-                book.setIsExist(Boolean.parseBoolean(fields[4]));
+                book.setAuthors(new ArrayList<>(Arrays.asList(csvData.get(i)[3].split("[ ]"))));
+                book.setIsExist(Boolean.parseBoolean(csvData.get(i)[4]));
                 res.add(book);
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
         return res;
-    }
-    public void recreateAuthors(List<Author> authorsCSV){
-        initHeader(headerAuthor, authorFile);
-        for (Author author : authorsCSV) {
-            String[] fields = parseAuthorToArray(author);
-            for (String string : author.getBookList())
-                if (fields[4].equals(" ")) {
-                    fields[4] = fields[3].trim();
-                    fields[4] = string + " ";
-                }
-                else
-                    fields[4] = fields[4] +  string + " ";
-            try (CSVWriter writer = new CSVWriter(new FileWriter(authorFile, true))) {
-                writer.writeNext(fields);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
     public void recreateBooks(List<Book> booksCSV){
         initHeader(headerBook, bookFile);
         for (Book book : booksCSV) {
             String[] fields = parseBookToArray(book);
-            for (String string : book.getAuthors())
+            for (String s : book.getAuthors())
                 if (fields[3].equals(" ")) {
                     fields[3] = fields[3].trim();
-                    fields[3] = string + " ";
-                }
-                else
-                    fields[3] += string + " ";
+                    fields[3] = s + " ";
+                } else  fields[3] += s + " ";
             try (CSVWriter writer = new CSVWriter(new FileWriter(bookFile, true))) {
                 writer.writeNext(fields);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-    }
-    private String[] parseAuthorToArray(Author a){
-        String[] res = new String[6];
-        res[0] = a.getId();
-        res[1] = dateFormat.format(a.getCreated());
-        res[2] = a.getFirstName();
-        res[3] = a.getLastName();
-        res[4] = " ";
-        res[5] = String.valueOf(a.getIsExist());
-        return res;
-    }
-
-    private String[] parseBookToArray(Book b){
-        String[] res = new String[5];
-        res[0] = b.getId();
-        res[1] = dateFormat.format(b.getCreated());
-        res[2] = b.getName();
-        res[3] = " ";
-        res[4] = String.valueOf(b.getIsExist());
-        return res;
     }
 
     public void deleteAuthor(String id) {
@@ -265,7 +228,26 @@ public class DBInMemory {
         recreateBooks(books);
     }
 
+    private String[] parseAuthorToArray(Author a){
+        String[] res = new String[6];
+        res[0] = a.getId();
+        res[1] = dateFormat.format(a.getCreated());
+        res[2] = a.getFirstName();
+        res[3] = a.getLastName();
+        res[4] = " ";
+        res[5] = String.valueOf(a.getIsExist());
+        return res;
+    }
 
+    private String[] parseBookToArray(Book b){
+        String[] res = new String[5];
+        res[0] = b.getId();
+        res[1] = dateFormat.format(b.getCreated());
+        res[2] = b.getName();
+        res[3] = " ";
+        res[4] = String.valueOf(b.getIsExist());
+        return res;
+    }
 
     public Author findAuthorByName(String firstName, String secondName){
         return findAllAuthors().stream().filter(au -> au.getFirstName().equals(firstName)).filter(au -> au.getLastName().equals(secondName)).filter(BaseEntity::getIsExist)
