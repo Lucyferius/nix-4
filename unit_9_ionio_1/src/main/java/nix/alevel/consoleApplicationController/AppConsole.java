@@ -1,8 +1,6 @@
-package nix.alevel.consoleApplication;
+package nix.alevel.consoleApplicationController;
 
-import nix.alevel.consoleApplication.controller.MainController;
-import nix.alevel.dao.impl.BookDAOImpl;
-import nix.alevel.entity.Book;
+import nix.alevel.consoleApplicationController.controller.MainController;
 
 public class AppConsole {
     public static void main(String[] args) {

@@ -1,8 +1,9 @@
-package nix.alevel.consoleApplication.controller.printcontroller;
+package nix.alevel.consoleApplicationController.controller.printcontroller;
 
-import nix.alevel.consoleApplication.util.consolehelper.ConsoleHelper;
-import nix.alevel.consoleApplication.view.AuthorOperationsConsoleRealisation;
-import nix.alevel.consoleApplication.view.BookOperationsConsoleRealisation;
+import nix.alevel.consoleApplicationController.controller.MainController;
+import nix.alevel.consoleApplicationController.util.consolehelper.ConsoleHelper;
+import nix.alevel.service.AuthorOperationRealisation;
+import nix.alevel.service.BookOperationsRealisation;
 
 public class PrintController {
     public static void run(){
@@ -18,27 +19,27 @@ public class PrintController {
                     "\t0. Exit");
             switch (consoleHelper.readInteger()){
                 case 1:
-                    AuthorOperationsConsoleRealisation.printAllAuthors();
+                    AuthorOperationRealisation.printAllAuthors();
                     System.out.println();
                     break;
                 case 2:
-                    AuthorOperationsConsoleRealisation.printAuthorByName();
+                    AuthorOperationRealisation.printAuthorByName(MainController.enterFirstLastName());
                     System.out.println();
                     break;
                 case 3:
-                    BookOperationsConsoleRealisation.printAllBoos();
+                    BookOperationsRealisation.printAllBoos();
                     System.out.println();
                     break;
                 case 4:
-                    BookOperationsConsoleRealisation.printBookByName();
+                    BookOperationsRealisation.printBookByName(MainController.enterBookName());
                     System.out.println();
                     break;
                 case 5:
-                    BookOperationsConsoleRealisation.printBooksByAuthorName();
+                    BookOperationsRealisation.printBooksByAuthorName(MainController.enterFirstLastName());
                     System.out.println();
                     break;
                 case 6:
-                    AuthorOperationsConsoleRealisation.printAuthorsByBookName();
+                    AuthorOperationRealisation.printAuthorsByBookName(MainController.enterBookName());
                     System.out.println();
                     break;
                 case 0:

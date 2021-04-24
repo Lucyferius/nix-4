@@ -1,4 +1,4 @@
-package nix.alevel.consoleApplication.util.consolehelper;
+package nix.alevel.consoleApplicationController.util.consolehelper;
 
 import java.io.BufferedReader;
 import java.io.IOException;

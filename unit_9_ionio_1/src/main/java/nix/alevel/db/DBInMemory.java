@@ -18,7 +18,7 @@ public class DBInMemory {
 
     private final String authorFile = "authors.csv";
     private final String bookFile = "books.csv";
-    private final DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy hh:mm:ss");
+    private final DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy hh:mm:ss", Locale.ENGLISH);
     private final String[] headerAuthor = {"id", "date", "firstName", "secondName", "books", "isExist"};
     private final String[] headerBook = new String[]{"id", "date", "name",  "authors", "isExist"};
 
@@ -31,7 +31,7 @@ public class DBInMemory {
             System.out.println(e.getMessage());
         }
     }
-    
+
     private DBInMemory() {
         if(!(new File(authorFile).exists())){
             initHeader(headerAuthor, authorFile);
@@ -189,7 +189,7 @@ public class DBInMemory {
             if(author.getIsExist()){
                 if(author.getId().equals(id)){
                     author.setIsExist(false);
-                     books = findAllBooks();
+                    books = findAllBooks();
                     for (Book book: books){
                         List<String> authorsOfBook = book.getAuthors();
                         if(authorsOfBook.equals(author.getId())){

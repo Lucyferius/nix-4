@@ -7,6 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+
 public class Author extends BaseEntity{
 
     private String firstName;
@@ -20,5 +21,14 @@ public class Author extends BaseEntity{
     public Author(){
         super();
         this.bookList = new ArrayList<>();
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", bookList=" + bookList +
+                '}';
     }
 }
