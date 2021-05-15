@@ -1,0 +1,18 @@
+Distance from gdansk to warszawa = 3.0
+The shorted path from gdansk to warszawa is [ gdansk -> bydgoszcz -> torun -> warszawa ]
+
+Distance from bydgoszcz to warszawa = 2.0
+The shorted path from bydgoszcz to warszawa is [ bydgoszcz -> torun -> warszawa ]
+
+Distance from primorsk to gdansk = 8.0
+The shorted path from primorsk to gdansk is [ primorsk -> bydgoszcz -> gdansk ]
+
+Distance from torun to drepr = 6.0
+The shorted path from torun to drepr is [ torun -> warszawa -> drepr ]
+
+Distance from novomoskovsk to kyiv = 8.0
+The shorted path from novomoskovsk to kyiv is [ novomoskovsk -> drepr -> kyiv ]
+
+Distance from kyiv to novomoskovsk = 8.0
+The shorted path from kyiv to novomoskovsk is [ kyiv -> drepr -> novomoskovsk ]
+
