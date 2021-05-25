@@ -34,6 +34,7 @@ public class Main {
                 Solution solution = new Solution(cost);
                 solutionDAO.update(problem.getId(), solution);
             }
+            connection.close();
         } catch (SQLException exception) {
             exception.printStackTrace();
         }

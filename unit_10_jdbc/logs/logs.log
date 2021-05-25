@@ -54,3 +54,35 @@
 2021-05-24 21:47:21,864 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:68] Start updating solution with id: 8
 2021-05-24 21:47:21,864 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:44] Start reading solution with id: 8
 2021-05-24 21:47:21,880 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:51] Read solution with problemId:8 cost:8
+2021-05-25 23:28:03,032 INFO [main] n.a.d.ConnectionHandler [ConnectionHandler.java:19] Connecting to jdbc:postgresql://localhost:5432/graph
+2021-05-25 23:28:04,149 INFO [main] n.a.d.ConnectionHandler [ConnectionHandler.java:21] Connected successfully to database
+2021-05-25 23:28:04,154 INFO [main] n.a.d.i.LocationDAO [LocationDAO.java:24] Start reading all locations
+2021-05-25 23:28:04,199 INFO [main] n.a.d.i.LocationDAO [LocationDAO.java:34] Read all locations
+2021-05-25 23:28:04,199 INFO [main] n.a.d.i.LocationDAO [RouteDAO.java:24] Start reading all routes
+2021-05-25 23:28:04,212 INFO [main] n.a.d.i.LocationDAO [RouteDAO.java:37] Read all routes
+2021-05-25 23:28:04,212 INFO [main] n.a.d.i.LocationDAO [ProblemDAO.java:23] Start reading all problems
+2021-05-25 23:28:04,219 INFO [main] n.a.d.i.LocationDAO [ProblemDAO.java:33] Read all problems
+2021-05-25 23:28:04,287 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:68] Start updating solution with id: 1
+2021-05-25 23:28:04,288 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:44] Start reading solution with id: 1
+2021-05-25 23:28:04,312 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:51] Read solution with problemId:1 cost:3
+2021-05-25 23:28:04,313 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:68] Start updating solution with id: 2
+2021-05-25 23:28:04,313 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:44] Start reading solution with id: 2
+2021-05-25 23:28:04,315 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:51] Read solution with problemId:2 cost:2
+2021-05-25 23:28:04,316 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:68] Start updating solution with id: 3
+2021-05-25 23:28:04,316 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:44] Start reading solution with id: 3
+2021-05-25 23:28:04,317 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:51] Read solution with problemId:3 cost:8
+2021-05-25 23:28:04,318 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:68] Start updating solution with id: 4
+2021-05-25 23:28:04,319 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:44] Start reading solution with id: 4
+2021-05-25 23:28:04,320 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:51] Read solution with problemId:4 cost:6
+2021-05-25 23:28:04,321 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:68] Start updating solution with id: 5
+2021-05-25 23:28:04,322 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:44] Start reading solution with id: 5
+2021-05-25 23:28:04,324 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:51] Read solution with problemId:5 cost:8
+2021-05-25 23:28:04,324 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:68] Start updating solution with id: 6
+2021-05-25 23:28:04,325 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:44] Start reading solution with id: 6
+2021-05-25 23:28:04,326 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:51] Read solution with problemId:6 cost:7
+2021-05-25 23:28:04,327 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:68] Start updating solution with id: 7
+2021-05-25 23:28:04,328 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:44] Start reading solution with id: 7
+2021-05-25 23:28:04,329 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:51] Read solution with problemId:7 cost:7
+2021-05-25 23:28:04,330 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:68] Start updating solution with id: 8
+2021-05-25 23:28:04,331 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:44] Start reading solution with id: 8
+2021-05-25 23:28:04,332 INFO [main] n.a.d.i.LocationDAO [SolutionDAO.java:51] Read solution with problemId:8 cost:8
