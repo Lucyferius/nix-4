@@ -45,11 +45,11 @@ public class CsvMapper {
                         } else if (fieldType.equals(Double.class) || fieldType.equals(double.class)) {
                             field.setDouble(instance, Double.parseDouble(cell));
                         } else if (fieldType.equals(Float.class) || fieldType.equals(float.class)) {
-                            field.setDouble(instance, Double.parseDouble(cell));
+                            field.setDouble(instance, Float.parseFloat(cell));
                         } else if (fieldType.equals(Short.class) || fieldType.equals(short.class)) {
-                            field.setDouble(instance, Double.parseDouble(cell));
+                            field.setDouble(instance, Short.parseShort(cell));
                         } else if (fieldType.equals(Byte.class) || fieldType.equals(byte.class)) {
-                            field.setDouble(instance, Double.parseDouble(cell));
+                            field.setDouble(instance, Byte.parseByte(cell));
                         } else if (fieldType.equals(Boolean.class) || fieldType.equals(boolean.class)) {
                             field.setBoolean(instance, Boolean.parseBoolean(cell));
                         } else if (fieldType.equals(Long.class) || fieldType.equals(long.class)) {
