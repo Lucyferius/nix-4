@@ -32,4 +32,5 @@ public class CsvParser {
         }
         return csvTable;
     }
+
 }
