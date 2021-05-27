@@ -7,9 +7,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class CsvMapper {
     public static <T> List<T> format(CsvTable csvTable, Class<T> tClass) {
