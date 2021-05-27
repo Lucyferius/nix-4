@@ -8,8 +8,8 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
-        String fileNameCars = "/cars.csv";
-        String fileNameStudents = "/students.csv";
+        String fileNameCars = "cars.csv";
+        String fileNameStudents = "students.csv";
 
         System.out.println("CARS");
         CsvTable csvTableCars = CsvParser.parse(fileNameCars);
