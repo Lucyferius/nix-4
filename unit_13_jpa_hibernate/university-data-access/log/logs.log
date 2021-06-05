@@ -1,0 +1,21 @@
+2021-06-06 02:19:36,640 INFO [main] o.h.Version [Version.java:44] HHH000412: Hibernate ORM core version 5.5.0.Final
+2021-06-06 02:19:36,648 INFO [main] o.h.c.Environment [Environment.java:184] HHH000205: Loaded properties from resource hibernate.properties: {hibernate.format_sql=true, hibernate.connection.provider_class=com.zaxxer.hikari.hibernate.HikariConnectionProvider, hibernate.connection.password=****, hibernate.connection.username=lucy, hibernate.connection.url=jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;INIT=runscript from 'classpath:/db.sql', hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, hibernate.hikari.maximumPoolSize=1}
+2021-06-06 02:19:37,417 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-06 02:19:37,781 INFO [main] o.h.e.j.c.i.ConnectionProviderInitiator [ConnectionProviderInitiator.java:137] HHH000130: Instantiating explicit connection provider: com.zaxxer.hikari.hibernate.HikariConnectionProvider
+2021-06-06 02:19:37,782 WARN [main] c.z.h.h.HikariConnectionProvider [HikariConnectionProvider.java:70] com.zaxxer.hikari.hibernate.HikariConnectionProvider has been deprecated for versions of Hibernate 4.3.6 and newer.  Please switch to org.hibernate.hikaricp.internal.HikariCPConnectionProvider.
+2021-06-06 02:19:37,798 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:80] HikariPool-1 - Starting...
+2021-06-06 02:19:38,070 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:82] HikariPool-1 - Start completed.
+2021-06-06 02:19:38,095 INFO [main] o.h.d.Dialect [Dialect.java:175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-06-06 02:19:39,314 INFO [main] o.h.t.s.i.SchemaCreatorImpl [AbstractScriptSourceInput.java:33] HHH000476: Executing import script 'file:/D:/NIX-4/unit_13_jpa_hibernate/university-data-access/target/classes/import.sql'
+2021-06-06 02:19:39,347 INFO [main] o.h.e.t.j.p.i.JtaPlatformInitiator [JtaPlatformInitiator.java:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-06 02:19:39,537 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-06-06 02:19:39,543 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-06-06 02:19:39,614 INFO [main] o.h.e.j.c.i.ConnectionProviderInitiator [ConnectionProviderInitiator.java:137] HHH000130: Instantiating explicit connection provider: com.zaxxer.hikari.hibernate.HikariConnectionProvider
+2021-06-06 02:19:39,615 WARN [main] c.z.h.h.HikariConnectionProvider [HikariConnectionProvider.java:70] com.zaxxer.hikari.hibernate.HikariConnectionProvider has been deprecated for versions of Hibernate 4.3.6 and newer.  Please switch to org.hibernate.hikaricp.internal.HikariCPConnectionProvider.
+2021-06-06 02:19:39,616 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:80] HikariPool-2 - Starting...
+2021-06-06 02:19:39,682 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:82] HikariPool-2 - Start completed.
+2021-06-06 02:19:39,683 INFO [main] o.h.d.Dialect [Dialect.java:175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-06-06 02:19:40,047 INFO [main] o.h.t.s.i.SchemaCreatorImpl [AbstractScriptSourceInput.java:33] HHH000476: Executing import script 'file:/D:/NIX-4/unit_13_jpa_hibernate/university-data-access/target/classes/import.sql'
+2021-06-06 02:19:40,086 INFO [main] o.h.e.t.j.p.i.JtaPlatformInitiator [JtaPlatformInitiator.java:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-06 02:19:40,271 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2021-06-06 02:19:40,274 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.

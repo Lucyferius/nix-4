@@ -1,0 +1,26 @@
+2021-06-06 02:20:57,128 INFO [main] o.h.Version [Version.java:44] HHH000412: Hibernate ORM core version [WORKING]
+2021-06-06 02:20:57,530 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-06 02:20:57,826 WARN [main] o.h.o.c.pooling [DriverManagerConnectionProviderImpl.java:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-06-06 02:20:57,833 INFO [main] o.h.o.c.pooling [DriverManagerConnectionProviderImpl.java:115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/programingDB]
+2021-06-06 02:20:57,834 INFO [main] o.h.o.c.pooling [DriverManagerConnectionProviderImpl.java:124] HHH10001001: Connection properties: {password=****, user=lucy}
+2021-06-06 02:20:57,834 INFO [main] o.h.o.c.pooling [DriverManagerConnectionProviderImpl.java:129] HHH10001003: Autocommit mode: false
+2021-06-06 02:20:57,837 INFO [main] o.h.e.j.c.i.DriverManagerConnectionProviderImpl [DriverManagerConnectionProviderImpl.java:274] HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-06-06 02:20:58,065 INFO [main] o.h.d.Dialect [Dialect.java:175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-06-06 02:20:58,812 INFO [main] o.h.o.c.access [DdlTransactionIsolatorNonJtaImpl.java:48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1d0cac30] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-06-06 02:20:58,882 INFO [main] o.h.o.c.access [DdlTransactionIsolatorNonJtaImpl.java:48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@164642a4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-06-06 02:20:58,973 INFO [main] o.h.t.s.i.SchemaCreatorImpl [AbstractScriptSourceInput.java:33] HHH000476: Executing import script 'jar:file:/D:/NIX-4/unit_13_jpa_hibernate/university-data-access/target/university-data-access-1.0-SNAPSHOT.jar!/import.sql'
+2021-06-06 02:20:59,001 INFO [main] o.h.e.t.j.p.i.JtaPlatformInitiator [JtaPlatformInitiator.java:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-06 02:20:59,061 INFO [main] c.a.h.Run [Run.java:25] Creating database and start linking teachers and groups
+2021-06-06 02:20:59,214 INFO [main] c.a.h.Run [Run.java:28] Create links between teachers and groups
+2021-06-06 02:20:59,216 INFO [main] c.a.h.Run [Run.java:34] Start finding the nearest lesson group for student with id: 2
+2021-06-06 02:20:59,257 INFO [main] c.a.h.Run [Run.java:37] The nearest lesson group for student with id: 2 is
+NearLesson{id=2,
+teacher=Misha Misha,
+topic=OOP,
+date=2021-06-15,
+time=15:00,
+group=nix-4,
+course=java}
+2021-06-06 02:20:59,258 INFO [main] c.a.h.Run [Run.java:43] Start finding the best group of teacher with id: 2
+2021-06-06 02:20:59,265 INFO [main] c.a.h.Run [Run.java:46] The best group of teacher with id: 2 is nix-4
+2021-06-06 02:20:59,268 INFO [main] o.h.o.c.pooling [DriverManagerConnectionProviderImpl.java:502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/programingDB]
