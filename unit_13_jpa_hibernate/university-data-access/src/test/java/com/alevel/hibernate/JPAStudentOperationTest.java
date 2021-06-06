@@ -1,10 +1,7 @@
 package com.alevel.hibernate;
 
 import com.alevel.hibernate.dao.StudentDAO;
-import com.alevel.hibernate.dao.TeacherDAO;
-import com.alevel.hibernate.init.SyncTeachersAndGroups;
-import com.alevel.hibernate.model.dto.NearLesson;
-import com.alevel.hibernate.model.entity.Group;
+import com.alevel.hibernate.exeption.ResourceWasNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,15 +13,14 @@ public class JPAStudentOperationTest extends ProgrammingCoursesTest{
 
     @BeforeEach
     void setUp() {
-        subject = new StudentDAO(entityManager);
+        subject = new StudentDAO(session);
     }
     @Test
     @DisplayName("find the nearest lesson")
     void testCreateResource() {
 
-        NearLesson nearLesson = subject.getNearLesson(1L);
-        assertNotNull(nearLesson);
+        assertDoesNotThrow(()-> subject.getNearLesson(1L));
 
-        assertThrows(RuntimeException.class, ()->subject.getNearLesson(-1L));
+        assertThrows(ResourceWasNotFoundException.class, ()->subject.getNearLesson(-1L));
     }
 }

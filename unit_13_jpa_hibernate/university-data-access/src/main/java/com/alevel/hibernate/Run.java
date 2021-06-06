@@ -3,6 +3,7 @@ package com.alevel.hibernate;
 
 import com.alevel.hibernate.dao.StudentDAO;
 import com.alevel.hibernate.dao.TeacherDAO;
+import com.alevel.hibernate.exeption.ResourceWasNotFoundException;
 import com.alevel.hibernate.init.SyncTeachersAndGroups;
 import com.alevel.hibernate.model.dto.NearLesson;
 import com.alevel.hibernate.model.entity.Group;
@@ -29,25 +30,29 @@ public class Run {
 
             TeacherDAO teacherDAO = new TeacherDAO(entityManager);
             StudentDAO studentDAO = new StudentDAO(entityManager);
-            Long id = 2L;
+
+            Long id = Long.valueOf(args[0]);
             try {
                 logger.info("Start finding the nearest lesson group for student with id: " + id);
                 NearLesson nearLesson = studentDAO.getNearLesson(id);
                 System.out.println("near lesson = \n" + nearLesson.toString());
                 logger.info("The nearest lesson group for student with id: " + id +" is\n" + nearLesson);
-            }catch (RuntimeException e){
-                logger.error(e.getMessage());
+            }catch (ResourceWasNotFoundException | RuntimeException e){
+                logger.error("The error was occurred ", e);
             }
 
-            try {
+           try {
                 logger.info("Start finding the best group of teacher with id: " + id);
                 Group bestGroupOfTeacher = teacherDAO.getTheBestGroupByTeacherId(id);
+                teacherDAO.getTheBestGroupByTeacherId(id);
                 System.out.println("group = " + bestGroupOfTeacher.getGroupName());
                 logger.info("The best group of teacher with id: " + id +" is " + bestGroupOfTeacher.getGroupName());
-            }catch (RuntimeException e){
-                logger.error(e.getMessage());
+            }catch (ResourceWasNotFoundException | RuntimeException e){
+                logger.error("The error was occurred ", e);
+            }finally {
+                entityManager.close();
             }
-            entityManager.close();
+
         }
     }
 }

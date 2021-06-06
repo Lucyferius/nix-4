@@ -29,6 +29,6 @@ insert into public.students (first_name, last_name, group_id, mark_id) values ('
 insert into public.students (first_name, last_name, group_id, mark_id) values ('Andey', 'Andreev', '3', '6');
 insert into public.lessons (description, date, time,group_id, teacher_id, topic_id ) values ('first lesson', '21.07.2021','15:00:00', '3','3','2');
 insert into public.lessons (description, date, time,group_id, teacher_id, topic_id ) values ('first lesson', '15.06.2021','15:00:00','1' ,'1','2');
-insert into public.lessons (description, date, time,group_id, teacher_id, topic_id ) values ('first lesson continue', '15.06.2021','18:00:00','1' ,'1','2');
 insert into public.lessons (description, date, time,group_id, teacher_id, topic_id ) values (null, '17.06.2021','15:00:00', '1','2','1');
 insert into public.lessons (description, date, time,group_id, teacher_id, topic_id ) values ('context manager 1 lesson', '13.08.2021','15:00:00', '2','3','5');
+insert into public.lessons (description, date, time,group_id, teacher_id, topic_id ) values ('first lesson continue', '15.06.2021','18:00:00','1' ,'1','2');

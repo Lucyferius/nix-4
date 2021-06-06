@@ -20,7 +20,7 @@ public class Teacher {
     @OneToMany(mappedBy = "teacher")
     private Set<Lesson> lessons;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "groups_teachers",
             joinColumns = {@JoinColumn(name = "teacher_id")},

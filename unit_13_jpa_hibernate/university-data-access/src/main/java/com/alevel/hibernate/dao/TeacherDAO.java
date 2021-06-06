@@ -1,5 +1,6 @@
 package com.alevel.hibernate.dao;
 
+import com.alevel.hibernate.exeption.ResourceWasNotFoundException;
 import com.alevel.hibernate.model.entity.Group;
 import com.alevel.hibernate.model.entity.Teacher;
 import com.alevel.hibernate.util.TheBestGroupFinder;
@@ -13,7 +14,14 @@ public class TeacherDAO {
     public TeacherDAO(EntityManager entityManager){
         this.entityManager = entityManager;
     }
-    public Group getTheBestGroupByTeacherId(Long id){
+    public Group getTheBestGroupByTeacherId(Long id) throws  ResourceWasNotFoundException{
+
+/*
+        String sqlQuery = "SELECT students.group_id, array_agg(marks.mark ORDER BY marks.mark ASC) FROM students " +
+                " INNER JOIN marks ON marks.id = students.mark_id " +
+                " WHERE students.group_id IN (SELECT id FROM groups INNER JOIN groups_teachers ON groups_teachers.group_id = groups.id" +
+                " WHERE groups_teachers.teacher_id=:id) GROUP BY students.group_id";
+*/
         var bestGroupFinder = new TheBestGroupFinder();
         double bestMark = 0;
         Group bestGroup = null;

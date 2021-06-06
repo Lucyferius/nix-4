@@ -1,6 +1,7 @@
 package com.alevel.hibernate;
 
 import com.alevel.hibernate.dao.TeacherDAO;
+import com.alevel.hibernate.exeption.ResourceWasNotFoundException;
 import com.alevel.hibernate.init.SyncTeachersAndGroups;
 import com.alevel.hibernate.model.entity.Group;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,20 +14,20 @@ public class JPATeacherOperationTest extends ProgrammingCoursesTest{
 
     @BeforeEach
     void setUp() {
-        subject = new TeacherDAO(entityManager);
+        subject = new TeacherDAO(session);
     }
     @Test
     @DisplayName("find the best group")
     void testCreateResource() {
-        assertThrows(RuntimeException.class, ()->subject.getTheBestGroupByTeacherId(1L));
+        assertThrows(ResourceWasNotFoundException.class, ()->subject.getTheBestGroupByTeacherId(1L));
 
         SyncTeachersAndGroups sync = new SyncTeachersAndGroups();
-        sync.initLinks(entityManager);
+        sync.initLinks(session);
 
-        Group bestGroupOfTeacher = subject.getTheBestGroupByTeacherId(1L);
+        Group bestGroupOfTeacher = assertDoesNotThrow(()->subject.getTheBestGroupByTeacherId(1L));
         assertNotNull(bestGroupOfTeacher);
         assertEquals(bestGroupOfTeacher.getId(), 1L);
 
-        assertThrows(RuntimeException.class, ()->subject.getTheBestGroupByTeacherId(-1L));
+        assertThrows(ResourceWasNotFoundException.class, ()->subject.getTheBestGroupByTeacherId(-1L));
     }
 }
