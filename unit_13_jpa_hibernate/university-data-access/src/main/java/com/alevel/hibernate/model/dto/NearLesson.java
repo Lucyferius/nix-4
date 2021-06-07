@@ -85,14 +85,14 @@ public class NearLesson {
 
     @Override
     public String toString() {
-        return "NearLesson{" +
-                "id=" + id +
-                ",\nteacher=" + teacher.getFirstName() + " " + teacher.getLastName() +
-                ",\ntopic=" + topic.getTopicName() +
-                ",\ndate=" + date +
-                ",\ntime=" + time +
-                ",\ngroup=" + group.getGroupName() +
-                ",\ncourse=" + course.getCourseName() +
+        return "NearLesson {" +
+                " id=" + id +
+                ", teacher=" + teacher.getFirstName() + " " + teacher.getLastName() +
+                ", topic=" + topic.getTopicName() +
+                ", date=" + date +
+                ", time=" + time +
+                ", group=" + group.getGroupName() +
+                ", course=" + course.getCourseName() +
                 '}';
     }
 }

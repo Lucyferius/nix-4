@@ -35,7 +35,7 @@ public class Run {
             try {
                 logger.info("Start finding the nearest lesson group for student with id: " + id);
                 NearLesson nearLesson = studentDAO.getNearLesson(id);
-                System.out.println("near lesson = \n" + nearLesson.toString());
+                System.out.println("\n\n NEAREST LESSON \n" + nearLesson.toString());
                 logger.info("The nearest lesson group for student with id: " + id +" is\n" + nearLesson);
             }catch (ResourceWasNotFoundException | RuntimeException e){
                 logger.error("The error was occurred ", e);
@@ -45,7 +45,7 @@ public class Run {
                 logger.info("Start finding the best group of teacher with id: " + id);
                 Group bestGroupOfTeacher = teacherDAO.getTheBestGroupByTeacherId(id);
                 teacherDAO.getTheBestGroupByTeacherId(id);
-                System.out.println("group = " + bestGroupOfTeacher.getGroupName());
+                System.out.println("\n\n BEST GROUP = " + bestGroupOfTeacher.getGroupName());
                 logger.info("The best group of teacher with id: " + id +" is " + bestGroupOfTeacher.getGroupName());
             }catch (ResourceWasNotFoundException | RuntimeException e){
                 logger.error("The error was occurred ", e);

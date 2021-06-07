@@ -19,8 +19,8 @@ public class JPATeacherOperationTest extends ProgrammingCoursesTest{
     @Test
     @DisplayName("find the best group")
     void testCreateResource() {
-        assertThrows(ResourceWasNotFoundException.class, ()->subject.getTheBestGroupByTeacherId(1L));
 
+        assertThrows(ResourceWasNotFoundException.class, ()->subject.getTheBestGroupByTeacherId(1L));
         SyncTeachersAndGroups sync = new SyncTeachersAndGroups();
         sync.initLinks(session);
 
