@@ -1,3 +1,3 @@
-2021-04-25 01:40:52 [INFO ] AuthorDAOImpl:31 - Start reading all
-2021-04-25 01:40:52 [INFO ] AuthorDAOImpl:34 - List is empty
-2021-04-25 01:40:52 [INFO ] AuthorDAOImpl:35 - Returning all authors
+2021-06-13 23:16:41 [INFO ] AuthorDAOImpl:18 - Check is author exist by name
+2021-06-13 23:16:41 [INFO ] AuthorDAOImpl:23 - Start author creating
+2021-06-13 23:16:41 [INFO ] AuthorDAOImpl:25 - Author created
