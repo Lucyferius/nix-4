@@ -5,7 +5,7 @@ import java.io.*;
 public class ChangesWriterThread implements Runnable {
     private String fileName;
 
-    private Boolean running = true;
+    private volatile Boolean running = true;
 
     private final StringBuffer inputBuf = new StringBuffer();
 
