@@ -20,18 +20,20 @@ public class App {
         Hippodrome hippodrome = new Hippodrome(HORSE_COUNT);
         Hippodrome.Horse[] horses = new Hippodrome.Horse[HORSE_COUNT];
         for (int i = 0; i < HORSE_COUNT; i++) {
-            horses[i] = new Hippodrome.Horse("horse " + (i+1), hippodrome);
+            horses[i] = new Hippodrome.Horse("horse " + (i+1),(i+1),  hippodrome);
         }
 
         hippodrome.startCompetition(horses);
 
-        Map<Hippodrome.Horse, Integer> score = hippodrome.getScore();
+        Map<Integer, Hippodrome.Horse> score = hippodrome.getScore();
         score.forEach((key, value) -> System.out.println(
-                "{house name=" + key.getHorseName() +
-                        ", place=" + value + "}"
+                "{place=" + key +
+                        ", house name=" + value.getHorseName() +"}"
         ));
 
-        System.out.println("The place of your horse is " + hippodrome.getPlace(choice));
+
+
+        System.out.println("The place of your horse is " + hippodrome.getPlace(choice).get());
 
     }
     private static int readNumber() throws IOException {
