@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+#    volumes:
+#      - ./target/servlets.war:/usr/local/tomcat/webapps/servlets.war
+    build:
+      context: .
+    container_name: servlets_tomcat
+    ports:
+      - 8080:8080
